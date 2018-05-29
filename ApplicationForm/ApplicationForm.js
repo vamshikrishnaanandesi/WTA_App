@@ -1,5 +1,5 @@
-var mongoose = require('mongoose');  
-var ApplicationFormSchema = new mongoose.Schema({  
+const mongoose = require('mongoose');  
+const ApplicationFormSchema = new mongoose.Schema({  
   question_name: String,
   question_actual_answer: String,
   question_user_answered: String

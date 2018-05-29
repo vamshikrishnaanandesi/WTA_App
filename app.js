@@ -1,13 +1,13 @@
 
-var express = require('express');
-var app = express();
-var db = require('./db');
+const express = require('express');
+const app = express();
+const db = require('./db');
 
 
 
-var ApplicationFormController = require('./ApplicationForm/ApplicationFormController');
+const ApplicationFormController = require('./ApplicationForm/ApplicationFormController');
 app.use('/ApplicationForm', ApplicationFormController );
 
-var SubmittedApplicationFormController = require('./SubmittedApplicationForm/SubmittedApplicationFormController');
+const SubmittedApplicationFormController = require('./SubmittedApplicationForm/SubmittedApplicationFormController');
 app.use('/SubmittedApplicationForm', SubmittedApplicationFormController );
 module.exports = app;

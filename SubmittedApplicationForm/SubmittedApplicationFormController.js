@@ -1,11 +1,11 @@
-var express = require('express');
-var router = express.Router();
-var bodyParser = require('body-parser');
+const express = require('express');
+const router = express.Router();
+const bodyParser = require('body-parser');
 
 router.use(bodyParser.urlencoded({ extended: true }));
 router.use(bodyParser.json());
-var User = require('./SubmittedApplicationForm');
-var Submit = require('../ApplicationForm/ApplicationForm');
+const User = require('./SubmittedApplicationForm');
+const Submit = require('../ApplicationForm/ApplicationForm');
                               
 
 
@@ -21,12 +21,12 @@ var Submit = require('../ApplicationForm/ApplicationForm');
 //         });
 // });
 
-router.get('/', function (req, res) {
+router.get('/', (req, res) => {
     Submit
     .find()
-    //.select("_id question_name question_actual_answer question_user_answered")
+    .select("_id question_name question_actual_answer question_user_answered")
     .populate('user_details')
-    .exec(function (err, user) {
+    .exec((err, user) => {
         if (err) return res.status(500).send("Tere was a problem finding the user.");
         if (!user) return res.status(404).send("No user found");
         res.status(200).send(user);

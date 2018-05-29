@@ -1,4 +1,4 @@
-var mongoose = require('mongoose');
+const mongoose = require('mongoose');
 //mongoose.connect('mongodb+srv://m001-student:m001-mongodb-basics@cluster0-xdpxm.mongodb.net/test');
 // const dbURI = "mongodb+srv://m001-student:m001-mongodb-basics@cluster0-xdpxm.mongodb.net/test?retryWrites=true";
 
@@ -25,7 +25,7 @@ var mongoose = require('mongoose');
 //    client.close();
 // });
 
-var uri = 'mongodb://localhost:27017/users';
+const uri = 'mongodb://localhost:27017/users';
 
 mongoose.connect(uri);
 // var db = mongoose.connection;
